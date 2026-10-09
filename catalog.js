@@ -42,7 +42,7 @@ window.CompositionCatalog = (()=>{
  ['我的“自画像”','写人','从外貌、性格、爱好等方面介绍自己。','我是谁|外貌特点|性格特点|爱好与事例|希望别人了解我'],
  ['故事新编','想象','在熟悉的故事基础上，想象新的情节或结局。','原故事线索|新的设定|发生变化|怎样发展|新的结局']
  ]};
- const make=(grade,semester,edition,data)=>({id:`${edition}-${grade}-${semester}`,grade,semester,edition,name:`${grade===3?'三':'四'}年级${semester==='upper'?'上册':'下册'}`,items:data.map((r,i)=>({id:`${edition}-${grade}-${semester}-${i+1}`,unit:i+1,title:r[0],type:r[1],goal:r[2],route:r[3].split('|'),training:r[4]||null}))});
+ const make=(grade,semester,edition,data)=>({id:`${edition}-${grade}-${semester}`,grade,semester,edition,name:`${grade===3?'三':'四'}年级${semester==='upper'?'上册':'下册'}`,items:data.map((r,i)=>({id:`${edition}-${grade}-${semester}-${i+1}`,unit:i+1,title:r[0],type:r[1],goal:r[2],route:r[3].split('|'),training:r[4]||'guided'}))});
  const books=[];[3,4].forEach(g=>['upper','lower'].forEach(s=>books.push(make(g,s,'original',rows[g+'-'+s]))));
  const three=rows['3-upper'].map(r=>r.slice());[three[2],three[3]]=[three[3],three[2]];three[7]=['那次经历真难忘','记事','回忆一次难忘经历，把事情经过和当时感受写清楚。','一次难忘经历|事情起因|事情经过|难忘的细节|当时与现在的感受'];books.push(make(3,'upper','revised',three));
  const four=rows['4-upper'].map(r=>r.slice());four[5]=['中国的世界文化遗产','介绍事物','收集并整理资料，有条理地介绍一处中国的世界文化遗产。','选一处遗产|资料和来源|主要特点|重要细节|价值与感受'];[four[6],four[7]]=[four[7],four[6]];books.push(make(4,'upper','revised',four));
