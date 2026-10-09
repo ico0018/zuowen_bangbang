@@ -39,4 +39,3 @@
  document.addEventListener('change',e=>{const t=e.target;if(t.id==='paper-ready'){state.paper[state.step]=t.checked;state.done=state.done.filter(x=>x!==state.step);save();render();}else if(t.dataset.check!==undefined){const i=Number(t.dataset.check);state.checks=state.checks.filter(x=>x!==i);if(t.checked)state.checks.push(i);save();}});
  render();
 })();
-

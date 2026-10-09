@@ -120,4 +120,3 @@ window.CompositionCourses=(()=>{
  };
  return {get(item){const d=data[item.title];if(!d)return null;const g=genres[item.type]||genres['记事'],poem=item.title==='轻叩诗歌大门';return {title:item.title,kind:poem?'poem':item.type==='书信'?'letter':'essay',note:poem?'诗歌练习按画面分行，不要求凑300字。':item.type==='综合性学习'?'本课是综合性学习：短文只是交流活动的一种方式，字数听老师安排。':'约300字是练习参考，正式习作以老师和课本要求为准。',rule:poem?'观察一个画面，用自己的词分行表达。':g[0],judgment:poem?['观察、想象并尝试朗读自己的诗','只把别人的散文随意分行当成自己的诗']:[g[1],g[2]],words:(poem?'水珠|树叶|逗号|小镜子':g[3]).split('|'),sentence:poem?'雨停了，操场把天空藏进一面小镜子。':g[4],steps:item.route.map((label,i)=>({label,question:label+'，你准备从哪个角度写？',options:d.options[i],paper:d.tips[i],example:d.paragraphs[i]})),sample:d.paragraphs.join('\n\n'),checks:poem?['我写了自己的观察或想象','我试读并调整了分行','收集的诗标明作者和来源']:['我完成了课本要求的内容','重点片段有具体细节','句子读起来通顺，标点合适','我用自己的素材，核对了格式或资料']};}};
 })();
-

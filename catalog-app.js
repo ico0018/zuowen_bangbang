@@ -19,4 +19,3 @@
  document.addEventListener('click',e=>{const button=e.target.closest('button');if(!button)return;if(button.dataset.grade){choice.grade=Number(button.dataset.grade);selected=null;}else if(button.dataset.semester){choice.semester=button.dataset.semester;selected=null;}else if(button.dataset.lesson){selected=button.dataset.lesson;}else if(button.id==='close-detail')selected=null;else if(button.id==='use-original'){choice.edition='original';selected=null;}else return;remember();render();if(selected){$('detail-title').tabIndex=-1;$('detail-title').focus({preventScroll:true});$('lesson-detail').scrollIntoView({block:'start',behavior:'smooth'});}});
  $('edition').addEventListener('change',e=>{choice.edition=e.target.value;selected=null;remember();render();});render();
 })();
-
