@@ -27,8 +27,8 @@ node serve.cjs
 - 写作模式随时回看各段素材、提示、好词和例句。
 - 自动保存、刷新恢复、自查、打印框架与当前段提示、手机布局。
 - 按课题和教材版本分别保存素材，返回目录保留所选年级、册次和版本；旧版本人物草稿迁移到原版三下《身边那些有特点的人》。
-- 取消整页注音，三、四年级均可点字查小字典。气泡显示所在句子的读音、字义，以及匹配到的课堂词语简释；多音字可展开其他读音。提供手动输入一个字的查询入口。释义较长时默认显示简短预览，可展开更多。
-- 普通提示、范例文字直接点击查字；按钮、选项、链接及复选标签保持正常操作，要查询这些控件里的字先打开“查字模式”。查字模式下点击文字只查字，不会误选答案或切换节点。关闭模式即可继续操作。原素材、答案值、旧进度不改动。
+- 取消整页注音，三、四年级均可选中文字查小字典。气泡显示所在句子的读音、字义，以及匹配到的课堂词语简释；多音字可展开其他读音。提供手动输入一个字的查询入口。释义较长时默认显示简短预览，可展开更多。
+- 用鼠标拖选文字，手机长按选中文字，自动弹出小字典。普通点击继续选择答案、切换节点；移除查字模式开关。可选择短词查看已有课堂词语解释。原素材、答案值、旧进度不改动。
 
 自由表达在纸上完成，网页不生成孩子的整篇作文，也不自动判定纸上内容或字数。范文用于理解写法。
 
@@ -54,7 +54,7 @@ node serve.cjs
 - app.js：选择、进度、导图及保存逻辑。
 - course.html、course-app.js、course.css：其他题型的分步训练、导图、保存和写作回看。
 - courses.js：32种其他课程的原创任务与分段范例。按课题标题匹配，可继续加入新课程。
-- dictionary-support.js、dictionary.css：点字气泡、上下文读音、查字模式、手动查字、移动端及动态页面内容支持。
+- dictionary-support.js、dictionary.css：选中文字气泡、上下文读音、手动查字、移动端及动态页面内容支持。
 - dictionary-data.js：14809个汉字的精简释义和48个原创课堂词语释义；课程用字的部分释义为本项目原创简释。其余字义来自 pwxcoo/chinese-xinhua 的开源数据，不代表商业新华字典的官方服务。MIT 许可证保存在 vendor/chinese-xinhua-LICENSE.txt；源仓库 https://github.com/pwxcoo/chinese-xinhua ，构建数据对应源提交 `fe6d6c2e8baa82187f4c96bbe042e43f96c05666`。
 - mindmap.js、mindmap.css：写作阶段的结构图、三条主枝、重点内容子枝及手机/打印布局。
 - vendor/pinyin-pro-3.29.4.js：本地拼音词库（MIT）；许可证为 vendor/pinyin-pro-LICENSE.txt。来自 npm 官方包 https://registry.npmjs.org/pinyin-pro/-/pinyin-pro-3.29.4.tgz 。文档 https://pinyin-pro.cn/use/pinyin.html 。按整段文字识别多音字，不逐字孤立猜读；用户自填的输入框内容不修改。
@@ -68,7 +68,7 @@ node serve.cjs
 
 ## 检查
 
-依次运行 `node verify.cjs`、`node verify-catalog.cjs`、`node verify-courses.cjs`、`node verify-reading-map.cjs`。浏览器检查目录进入课程、步骤选择、判断纠错、刷新恢复、导图回看、点字查询、控件查字不误选、字典关闭、多音字和手机布局。
+依次运行 `node verify.cjs`、`node verify-catalog.cjs`、`node verify-courses.cjs`、`node verify-reading-map.cjs`。浏览器检查目录进入课程、步骤选择、判断纠错、刷新恢复、导图回看、选中文字查询、普通点击不弹字典、字典关闭、多音字和手机布局。
 
 ## 目录核对来源（2026-10-09）
 
